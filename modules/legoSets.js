@@ -5,7 +5,9 @@ const sequelize = new Sequelize('SenecaDB', 'SenecaDB_owner', '9mLVpfOeFty6', {
   host: 'ep-floral-violet-a5yhutdh.us-east-2.aws.neon.tech',
   dialect: 'postgres',
   port: 5432,
-  dialect: 'postgres',
+  dialectOptions: {
+    ssl: { rejectUnauthorized: false },
+  },
 });
 
 const Theme = sequelize.define('Theme', {
