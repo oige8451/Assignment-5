@@ -1,0 +1,17 @@
+<div class="navbar bg-base-100">
+    <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl" href="/">Home</a>
+        <ul class="menu menu-horizontal">
+            <li><a class="<%= (page == '/lego/sets') ? 'active' : '' %>" href="/lego/sets">View Collection</a></li>
+            <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About</a></li>
+            <li><a class="<%= (page == "/lego/addSet") ? 'active' : '' %>" href="/lego/addSet">Add to Collection</a></li>
+        </ul>
+    </div>
+    <div class="dropdown dropdown-end">
+        <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a class="<%= (page == '/lego/sets') ? 'active' : '' %>" href="/lego/sets">View Collection</a></li>
+            <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About</a></li>
+            <li><a class="<%= (page == "/lego/addSet") ? 'active' : '' %>" href="/lego/addSet">Add to Collection</a></li>
+        </ul>
+    </div>
+</div>
