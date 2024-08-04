@@ -10,6 +10,7 @@ const sequelize = new Sequelize('SenecaDB', 'SenecaDB_owner', '9mLVpfOeFty6', {
   },
 });
 
+
 const Theme = sequelize.define('Theme', {
   id: {
     type: Sequelize.INTEGER,
