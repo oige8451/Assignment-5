@@ -8,6 +8,7 @@ const sequelize = new Sequelize('SenecaDB', 'SenecaDB_owner', '9mLVpfOeFty6', {
   dialectOptions: {
     ssl: { rejectUnauthorized: false },
   },
+  dialectModule: pg
 });
 
 
