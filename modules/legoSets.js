@@ -62,7 +62,6 @@ function initialize() {
     })
     .catch((err) => {
       console.error('Unable to sync the database:', err.message || err);
-      throw err; // Rethrow error to be caught in higher-level code if needed
     });
 }
 

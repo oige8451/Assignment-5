@@ -159,8 +159,9 @@ legoSets
 
     // Handle 500 errors
     app.use((err, req, res, next) => {
-      res.status(500).render('500', { message: `Internal Server Error: ${error.message}`});
+      res.status(500).render('500', { message: `Internal Server Error: ${err.message}` });
     });
+    
 
   })
   .catch((error) => {
