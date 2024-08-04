@@ -1,4 +1,5 @@
 require('dotenv').config();
+const pg = require('pg');
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize('SenecaDB', 'SenecaDB_owner', '9mLVpfOeFty6', {
