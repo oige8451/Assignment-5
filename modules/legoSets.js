@@ -1,14 +1,13 @@
 require('dotenv').config();
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
   host: process.env.DB_HOST,
   dialect: 'postgres',
   port: process.env.DB_PORT,
   dialectOptions: {
     ssl: { rejectUnauthorized: false },
   },
-  dialectModule: pg
 });
 
 
@@ -56,11 +55,14 @@ Set.belongsTo(Theme, { foreignKey: 'theme_id' });
 
 // Function to initialize the database
 function initialize() {
-  return new Promise((resolve, reject) => {
-    sequelize.sync()
-      .then(() => resolve())
-      .catch((err) => reject(`Unable to sync the database: ${err}`));
-  });
+  return sequelize.sync()
+    .then(() => {
+      console.log('Database synced successfully');
+    })
+    .catch((err) => {
+      console.error('Unable to sync the database:', err.message || err);
+      throw err; // Rethrow error to be caught in higher-level code if needed
+    });
 }
 
 // Function to return all sets
